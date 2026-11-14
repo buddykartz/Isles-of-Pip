@@ -1,43 +1,197 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Isles of Pip — Support</title>
-    <style>
-        body {
-            font: 17px/1.6 -apple-system, system-ui, sans-serif;
-            max-width: 640px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #2a1a45;
-            background: #f6f1fb
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Isles of Pip: a calm perspective puzzle game</title>
+<meta name="description" content="Turn the world, bend the stairs and guide little Pip home. 200 hand-built puzzle isles, no timers, works offline. Free on the App Store and Google Play.">
+<meta name="theme-color" content="#3b2565">
+<link rel="icon" href="img/icon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
+<link rel="canonical" href="https://buddykartz.github.io/Isles-of-Pip/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Isles of Pip">
+<meta property="og:description" content="A calm perspective puzzle game. 200 hand-built isles, no timers. Free on the App Store and Google Play.">
+<meta property="og:url" content="https://buddykartz.github.io/Isles-of-Pip/">
+<meta property="og:image" content="https://buddykartz.github.io/Isles-of-Pip/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{--plum:#3b2565;--deep:#2c1b4e;--ink:#2a1a45;--soft:#f6f1fb;--peach:#f0b48a;--glass:rgba(255,255,255,.09);--line:rgba(255,255,255,.16)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:17px/1.6 -apple-system,system-ui,"Avenir Next","Segoe UI",sans-serif;color:#fff;background:linear-gradient(180deg,#6b5aa3 0,#4c3a85 26%,#3b2565 58%,#2c1b4e 100%);background-attachment:fixed;min-height:100vh}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--peach);outline-offset:3px;border-radius:8px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
-        h1 {
-            font-weight: 600
-        }
+  /* header */
+  header{padding:18px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:14px}
+  .brand img{width:38px;height:38px;border-radius:10px;box-shadow:0 4px 12px rgba(20,8,50,.4)}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{text-decoration:none;opacity:.82}
+  nav a:hover{opacity:1}
+  @media(max-width:560px){nav a:nth-child(-n+2){display:none}}
 
-        a {
-            color: #7a4fc2
-        }
-    </style>
+  /* hero */
+  .hero{padding:34px 0 64px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+  .eyebrow{margin:0 0 12px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--peach);font-weight:600}
+  h1{margin:0 0 14px;font-weight:600;font-size:clamp(36px,6.4vw,62px);line-height:1.04;letter-spacing:-.01em}
+  .lede{margin:0 0 28px;font-size:clamp(17px,2.2vw,20px);max-width:30em;opacity:.92}
+  .badges{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .badges a{display:inline-block;line-height:0;border-radius:10px;transition:transform .15s ease}
+  .badges a:hover{transform:translateY(-2px)}
+  .badges img{height:54px;width:auto;display:block}
+  .meta{margin:20px 0 0;font-size:14px;opacity:.78;display:flex;flex-wrap:wrap;gap:6px 18px}
+  .meta span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--peach);transform:rotate(45deg);margin-right:8px;vertical-align:1px}
+  .stage{position:relative;height:520px}
+  .phone{position:absolute;margin:0;border:7px solid #1b1033;border-radius:40px;overflow:hidden;background:#1b1033;box-shadow:0 30px 60px rgba(14,5,38,.55),0 0 0 1px rgba(255,255,255,.12)}
+  .phone img{display:block;width:100%;height:auto}
+  .phone.a{width:224px;left:6%;top:30px;transform:rotate(-5deg);z-index:2}
+  .phone.b{width:224px;right:4%;top:0;transform:rotate(4deg)}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;text-align:center}.lede{margin-left:auto;margin-right:auto}.badges,.meta{justify-content:center}.stage{height:400px;margin-top:14px}.phone{width:176px!important;border-width:6px;border-radius:32px}.phone.a{left:calc(50% - 168px)}.phone.b{right:calc(50% - 168px)}.hero{padding-top:6px}}
+
+  /* sections */
+  section{padding:56px 0}
+  h2{margin:0 0 10px;font-weight:600;font-size:clamp(26px,4vw,38px);letter-spacing:-.005em}
+  .sub{margin:0 0 30px;opacity:.82;max-width:34em}
+  .center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+
+  /* screens */
+  .shots{display:flex;gap:18px;overflow-x:auto;padding:10px 22px 26px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent}
+  .shots figure{margin:0;flex:0 0 auto;scroll-snap-align:center;text-align:center}
+  .shots img{height:460px;width:auto;border-radius:30px;box-shadow:0 16px 36px rgba(14,5,38,.5);border:5px solid #1b1033;background:#1b1033;display:block}
+  .shots figcaption{margin-top:12px;font-size:14px;opacity:.78}
+  .shotswrap{max-width:1180px;margin:0 auto}
+
+  /* features */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .card{padding:26px 26px 24px;border-radius:24px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(6px)}
+  .card .ic{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#f6c9a2,#e79a80);display:grid;place-items:center;margin-bottom:16px;box-shadow:0 8px 18px rgba(14,5,38,.3)}
+  .card .ic svg{width:26px;height:26px;stroke:#3b2565;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{margin:0 0 6px;font-size:20px;font-weight:600}
+  .card p{margin:0;opacity:.84}
+
+  /* get it */
+  .get{padding:60px 0}
+  .band{border-radius:32px;padding:44px 24px;text-align:center;background:linear-gradient(135deg,rgba(240,180,138,.24),rgba(255,255,255,.07));border:1px solid var(--line)}
+  .band .badges{justify-content:center;margin-top:22px}
+  .band img.icon{width:96px;height:96px;border-radius:22px;box-shadow:0 14px 30px rgba(14,5,38,.5)}
+
+  /* support */
+  #support .box{background:var(--soft);color:var(--ink);border-radius:30px;padding:40px 34px;box-shadow:0 24px 50px rgba(14,5,38,.4)}
+  #support h2{color:var(--plum)}
+  #support p{margin:0 0 14px}
+  #support a{color:#6d3fc0}
+  .qa{margin:22px 0 0;display:grid;gap:10px}
+  details{background:#fff;border:1px solid #e4d9f2;border-radius:16px;padding:14px 18px}
+  summary{cursor:pointer;font-weight:600;color:var(--plum);list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";font-size:22px;line-height:1;color:#9a78d6}
+  details[open] summary:after{content:"–"}
+  details p{margin:10px 0 0;color:#4a3a66}
+  .mail{display:inline-block;margin-top:6px;padding:12px 22px;border-radius:999px;background:var(--plum);color:#fff!important;text-decoration:none;font-weight:600}
+
+  footer{padding:34px 0 46px;text-align:center;font-size:15px;opacity:.84}
+  footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);margin:0 8px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.badges a{transition:none}}
+</style>
 </head>
-
 <body>
-    <h1>Isles of Pip</h1>
-    <p>A calm isometric puzzle game: turn the world, bend the stairs and guide Pip home across 200 tiny isles.</p>
-    <h2>Support</h2>
-    <p>Questions, bugs or ideas? Email <strong><a href="mailto:islesofpip@gmail.com">islesofpip@gmail.com</a></strong> and I'll reply as soon as I can. Please
-        include your iPhone model and iOS version.</p>
-    <h2>Common questions</h2>
-    <p><strong>How do I remove ads?</strong> Tap "No ads" on the main menu. It is a one-time purchase.</p>
-    <p><strong>I bought it on another device.</strong> Open Settings in the game and choose Restore Purchases.</p>
-    <p><strong>I'm stuck on a level.</strong> Tap the hint button in the level. Swipe sideways to turn the world: many
-        routes only connect from the right angle.</p>
-    <p><strong>Game Center.</strong> Signing in to Game Center is optional. It adds a leaderboard for stars and achievements; the game plays the same without it.</p>
-    <p><a href="privacy.html">Privacy policy</a></p>
-</body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Isles of Pip"><img src="img/icon.png" alt="" width="38" height="38"><span>Isles of Pip</span></a>
+    <nav aria-label="Main">
+      <a href="#screens">Screens</a><a href="#features">Features</a><a href="#support">Support</a><a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
 
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">A calm perspective puzzle game</p>
+        <h1>Turn the world.<br>Find the way.</h1>
+        <p class="lede">Guide little Pip across 200 floating isles. Swipe to turn the world, and watch paths that looked impossible snap together.</p>
+        <div class="badges">
+          <a href="https://apps.apple.com/app/id6817205346" aria-label="Download Isles of Pip on the App Store"><img src="img/badge-app-store.svg" alt="Download on the App Store" width="162" height="54"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.vkarthik.islesofpip" aria-label="Get Isles of Pip on Google Play"><img src="img/badge-google-play.png" alt="Get it on Google Play" width="181" height="54"></a>
+        </div>
+        <p class="meta"><span>Free to play</span><span>No timers</span><span>Works offline</span></p>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <figure class="phone a"><img src="img/shot1.jpg" alt="" width="480" height="1043"></figure>
+        <figure class="phone b"><img src="img/shot3.jpg" alt="" width="480" height="1043"></figure>
+      </div>
+    </div>
+  </div>
+
+  <section id="screens">
+    <div class="wrap center"><h2>Little worlds you can hold in your hand</h2><p class="sub">Every isle is a small, quiet puzzle that looks like a diorama.</p></div>
+    <div class="shotswrap">
+      <div class="shots" role="list" aria-label="Screenshots">
+        <figure role="listitem"><img src="img/shot1.jpg" alt="Whispering Boughs, a puzzle isle with Pip" width="480" height="1043" loading="lazy"><figcaption>Whispering Boughs</figcaption></figure>
+        <figure role="listitem"><img src="img/shot2.jpg" alt="Over and Under, a trickier isle" width="480" height="1043" loading="lazy"><figcaption>Over and Under</figcaption></figure>
+        <figure role="listitem"><img src="img/shot3.jpg" alt="Silk Road, a pink isle with a gate and key" width="480" height="1043" loading="lazy"><figcaption>Silk Road</figcaption></figure>
+        <figure role="listitem"><img src="img/shot4.jpg" alt="The island selector" width="480" height="1043" loading="lazy"><figcaption>Twenty islands</figcaption></figure>
+        <figure role="listitem"><img src="img/shot5.jpg" alt="Achievements" width="480" height="1043" loading="lazy"><figcaption>Achievements</figcaption></figure>
+        <figure role="listitem"><img src="img/shot6.jpg" alt="New looks for Pip" width="480" height="1043" loading="lazy"><figcaption>New looks for Pip</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="center"><h2>Made to be relaxing</h2><p class="sub">No timers, no lives, no pressure. Take as long as you like.</p></div>
+      <div class="grid">
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></div><h3>Turn the world</h3><p>Swipe to rotate. A stair that leads nowhere becomes a way up, and a gap becomes a bridge, when you find the right angle.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>200 hand-built isles</h3><p>Twenty floating islands, each with its own colours, its own music and its own idea. Easy at the start, properly tricky later.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v6M12 14v6M4 12h6M14 12h6"/></svg></div><h3>Wheels, gates and wind</h3><p>Spin wheels, slide platforms, find keys for gates, follow phantom bridges and let the wind carry Pip along.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></div><h3>Calm by design</h3><p>A soft generative score, achievements and a stars leaderboard, new looks for Pip, and it all works offline.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="get">
+    <div class="wrap">
+      <div class="band">
+        <img class="icon" src="img/icon.png" alt="Isles of Pip app icon" width="96" height="96">
+        <h2 style="margin-top:18px">Ready when you are</h2>
+        <p class="sub" style="margin:0 auto">Free on iPhone and Android. A one-time purchase removes ads for good.</p>
+        <div class="badges">
+          <a href="https://apps.apple.com/app/id6817205346" aria-label="Download Isles of Pip on the App Store"><img src="img/badge-app-store.svg" alt="Download on the App Store" width="162" height="54" loading="lazy"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.vkarthik.islesofpip" aria-label="Get Isles of Pip on Google Play"><img src="img/badge-google-play.png" alt="Get it on Google Play" width="181" height="54" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap">
+      <div class="box">
+        <h2>Support</h2>
+        <p>Questions, bugs or ideas? Email me and I'll reply as soon as I can. Please include your device model and its iOS or Android version.</p>
+        <a class="mail" href="mailto:islesofpip@gmail.com">islesofpip@gmail.com</a>
+        <div class="qa">
+          <details><summary>How do I remove ads?</summary><p>Tap "No ads" on the main menu. It is a one-time purchase.</p></details>
+          <details><summary>I bought it on another device.</summary><p>Open Settings in the game and choose Restore Purchases.</p></details>
+          <details><summary>I'm stuck on a level.</summary><p>Tap the hint button in the level. Swipe sideways to turn the world: many routes only connect from the right angle.</p></details>
+          <details><summary>Do I need to sign in to anything?</summary><p>No. Game Center on iPhone and Google Play Games on Android are optional. They add a leaderboard for stars and achievements, and the game plays the same without them.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="mailto:islesofpip@gmail.com">Contact</a>
+    <p style="margin:18px 0 0;opacity:.75;font-size:14px">Made with care by a solo developer. Apple and the App Store are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </div>
+</footer>
+</body>
 </html>
