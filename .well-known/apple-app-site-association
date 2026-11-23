@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Y5GXTXMCPM.com.vkarthik.TinyWorlds"],
+        "components": [{ "/": "/i/*", "comment": "A shared isle: the code rides after the #" }],
+        "appID": "Y5GXTXMCPM.com.vkarthik.TinyWorlds",
+        "paths": ["/i/*"]
+      }
+    ]
+  }
+}
