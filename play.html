@@ -65,6 +65,9 @@
   .shots img{height:460px;width:auto;border-radius:30px;box-shadow:0 16px 36px rgba(14,5,38,.5);border:5px solid #1b1033;background:#1b1033;display:block}
   .shots figcaption{margin-top:12px;font-size:14px;opacity:.78}
   .shotswrap{max-width:1180px;margin:0 auto}
+  .shots.three{justify-content:safe center}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
 
   /* features */
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -105,7 +108,7 @@
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Isles of Pip"><img src="img/icon.png" alt="" width="38" height="38"><span>Isles of Pip</span></a>
     <nav aria-label="Main">
-      <a href="#screens">Screens</a><a href="#features">Features</a><a href="#support">Support</a><a href="privacy.html">Privacy</a>
+      <a href="#screens">Screens</a><a href="#designer">Designer</a><a href="#features">Features</a><a href="#support">Support</a><a href="privacy.html">Privacy</a>
     </nav>
   </div>
 </header>
@@ -116,12 +119,12 @@
       <div>
         <p class="eyebrow">A calm perspective puzzle game</p>
         <h1>Turn the world.<br>Find the way.</h1>
-        <p class="lede">Guide little Pip across 200 floating isles. Swipe to turn the world, and watch paths that looked impossible snap together.</p>
+        <p class="lede">Guide little Pip across 200 floating isles. Swipe to turn the world, and watch paths that looked impossible snap together. Then build your own isles and share them with friends.</p>
         <div class="badges">
           <a href="https://apps.apple.com/app/apple-store/id6817205346?pt=129520354&amp;ct=ig_cozy_escape&amp;mt=8" aria-label="Download Isles of Pip on the App Store"><img src="img/badge-app-store.svg" alt="Download on the App Store" width="162" height="54"></a>
           <a href="https://play.google.com/store/apps/details?id=com.vkarthik.islesofpip" aria-label="Get Isles of Pip on Google Play"><img src="img/badge-google-play.png" alt="Get it on Google Play" width="181" height="54"></a>
         </div>
-        <p class="meta"><span>Free to play</span><span>No timers</span><span>Works offline</span></p>
+        <p class="meta"><span>Free to play</span><span>No timers</span><span>Works offline</span><span>Level designer</span></p>
       </div>
       <div class="stage" aria-hidden="true">
         <figure class="phone a"><img src="img/shot1.jpg" alt="" width="480" height="1043"></figure>
@@ -144,6 +147,24 @@
     </div>
   </section>
 
+  <section id="designer">
+    <div class="wrap center"><p class="eyebrow">New in 1.3</p><h2>Build your own isles</h2><p class="sub">The level designer puts every piece of the game in your hands. Build an isle in 3D, play it yourself, then share it with a friend. On iPhone and iPad.</p></div>
+    <div class="shotswrap">
+      <div class="shots three" role="list" aria-label="Level designer screenshots">
+        <figure role="listitem"><img src="img/design1.jpg" alt="The level designer: building an isle layer by layer in 3D" width="480" height="1043" loading="lazy"><figcaption>Build in 3D</figcaption></figure>
+        <figure role="listitem"><img src="img/design2.jpg" alt="The Mechanics tab with keys, gates, owls and levers" width="480" height="1043" loading="lazy"><figcaption>Add mechanics</figcaption></figure>
+        <figure role="listitem"><img src="img/design3.jpg" alt="A share card with a picture of the isle and a QR code" width="480" height="1043" loading="lazy"><figcaption>Share with a QR code</figcaption></figure>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="steps">
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>Build</h3><p>Stack layers of floor, stairs and paths, then add keys and gates, wheels, levers, lifts and portals. Eight build challenges help you start, or remix an island you have finished.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><h3>Play</h3><p>Switch to Play and walk Pip through it. The game checks that your isle can be finished, works out its par, and points at anything that needs fixing.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg></div><h3>Share</h3><p>Every isle becomes a card with a QR code. Friends scan it with the Camera, play your isle and send their score back to beat. No account needed.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="features">
     <div class="wrap">
       <div class="center"><h2>Made to be relaxing</h2><p class="sub">No timers, no lives, no pressure. Take as long as you like.</p></div>
@@ -152,8 +173,6 @@
         <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>200 hand-built isles</h3><p>Twenty floating islands, each with its own colours, its own music and its own idea. Easy at the start, properly tricky later.</p></div>
         <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v6M12 14v6M4 12h6M14 12h6"/></svg></div><h3>Wheels, gates and wind</h3><p>Spin wheels, slide platforms, find keys for gates, follow phantom bridges and let the wind carry Pip along.</p></div>
         <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></div><h3>Calm by design</h3><p>A soft generative score, achievements and a stars leaderboard, new looks for Pip, and it all works offline.</p></div>
-        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M12 13v8"/><path d="M8 17h8"/></svg></div><h3>Build your own isles</h3><p>The level designer lets you build isles in 3D, layer by layer, with stairs, keys, wheels, levers, lifts and portals. Eight build challenges help you start.</p></div>
-        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg></div><h3>Share with friends</h3><p>Every isle you make becomes a card with a QR code. Friends scan it with the Camera and play it, then send their score back to beat.</p></div>
       </div>
     </div>
   </section>
