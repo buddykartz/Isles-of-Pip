@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vkarthik.islesofpip",
+      "sha256_cert_fingerprints": [
+        "E7:79:06:80:0F:D7:FA:76:F2:98:1F:C1:E7:EF:EE:6E:42:D5:07:F2:C9:1F:96:03:55:0B:F4:B9:5C:78:FC:10",
+        "D5:7B:CD:0C:96:80:12:4C:FA:6C:71:50:8A:A0:76:2F:E2:5D:B4:41:9D:7E:C7:C6:E2:82:80:B5:93:1A:74:1B"
+      ]
+    }
+  }
+]
